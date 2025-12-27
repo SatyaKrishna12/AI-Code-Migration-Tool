@@ -1,0 +1,43 @@
+.code-diff-container {
+  margin-top: 30px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.diff-header {
+  background: #f8f9fa;
+  padding: 15px 20px;
+  border-bottom: 1px solid #d1d5db;
+}
+
+.diff-header h3 {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.diff-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.label-original {
+  color: #dc3545;
+}
+
+.label-migrated {
+  color: #28a745;
+}
+
+.code-diff-empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: #666;
+  background: #f8f9fa;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  margin-top: 30px;
+}

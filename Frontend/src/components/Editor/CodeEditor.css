@@ -1,0 +1,10 @@
+.code-editor-wrapper {
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.code-editor-wrapper * {
+  pointer-events: auto;
+}

@@ -1,0 +1,103 @@
+.migration-history {
+  margin-top: 30px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: #f8f9fa;
+  cursor: pointer;
+  user-select: none;
+}
+
+.history-header:hover {
+  background: #e9ecef;
+}
+
+.history-header h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  color: #666;
+}
+
+.history-content {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.history-loading,
+.history-error,
+.history-empty {
+  padding: 20px;
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+}
+
+.history-error {
+  color: #dc3545;
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.history-item {
+  padding: 15px 20px;
+  border-bottom: 1px solid #e9ecef;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.history-item:last-child {
+  border-bottom: none;
+}
+
+.history-item:hover {
+  background: #f8f9fa;
+}
+
+.history-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.history-target {
+  background: #0066ff;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.history-date {
+  font-size: 12px;
+  color: #666;
+}
+
+.history-preview {
+  font-size: 13px;
+  color: #333;
+  font-family: 'Courier New', monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
