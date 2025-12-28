@@ -15,6 +15,18 @@ app.use(cors(corsOptions));
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
+// Health check route
+app.get('/', (req, res) => {
+  res.json({
+    success: true,
+    message: 'AI Migration API is running',
+    endpoints: {
+      migrate: 'POST /api/migrate',
+      history: 'GET /api/migrate/history'
+    }
+  });
+});
+
 // API Routes
 app.use('/api/migrate', migrationRoutes);
 
