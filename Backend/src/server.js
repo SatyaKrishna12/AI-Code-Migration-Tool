@@ -1,13 +1,9 @@
 import dotenv from 'dotenv';
 import app from './app.js';
-import connectDB from './config/db.js';
 
 dotenv.config();
 
-// Connect to DB
-connectDB();
-
-// For Vercel 
+// For Vercel serverless deployment
 export default app;
 
 // For local development

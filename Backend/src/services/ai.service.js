@@ -13,11 +13,13 @@ class AIService {
     
     this.initialized = true;
     
-    if (!process.env.GEMINI_API_KEY || process.env.GEMINI_API_KEY === 'your_gemini_api_key_here') {
-      console.warn('⚠️  GEMINI_API_KEY not configured. Please add your API key to .env file');
+    const apiKey = process.env.GOOGLE_API_KEY || process.env.GEMINI_API_KEY;
+    
+    if (!apiKey || apiKey === 'your_gemini_api_key_here') {
+      console.warn('⚠️  GOOGLE_API_KEY or GEMINI_API_KEY not configured. Please add your API key to environment variables');
       this.configured = false;
     } else {
-      this.genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+      this.genAI = new GoogleGenerativeAI(apiKey);
       this.configured = true;
       console.log('✅ Gemini API configured successfully');
     }
@@ -28,7 +30,7 @@ class AIService {
     this.initialize();
     
     if (!this.configured) {
-      throw new Error('Gemini API is not configured. Please add GEMINI_API_KEY to your .env file');
+      throw new Error('Gemini API is not configured. Please add GOOGLE_API_KEY or GEMINI_API_KEY to your environment variables');
     }
 
     if (!prompt || typeof prompt !== 'string' || prompt.trim() === '') {
