@@ -4,10 +4,12 @@ import migrationRoutes from './routes/migration.routes.js';
 
 const app = express();
 
-// CORS Configuration
+// CORS Configuration - Allow all origins
 const corsOptions = {
-  origin: process.env.ALLOWED_ORIGINS ? process.env.ALLOWED_ORIGINS.split(',') : '*',
+  origin: true,
   credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
 };
 
 // Middleware
