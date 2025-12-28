@@ -3,12 +3,7 @@ import aiService from './ai.service.js';
 import PromptBuilder from '../utils/promptBuilder.js';
 
 class MigrationService {
-  /**
-   * Performs code migration and saves to database
-   * @param {string} code - The original code to migrate
-   * @param {string} target - Target language ("ES6" or "TypeScript")
-   * @returns {Promise<Object>} - The migration session object
-   */
+
   async migrateCode(code, target) {
     try {
       // Build the prompt
@@ -37,10 +32,6 @@ class MigrationService {
     }
   }
 
-  /**
-   * Retrieves all migration sessions
-   * @returns {Promise<Array>} - Array of migration sessions
-   */
   async getMigrationHistory() {
     try {
       const migrations = await Migration.find()

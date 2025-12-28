@@ -1,10 +1,6 @@
 import migrationService from '../services/migration.service.js';
 
 class MigrationController {
-  /**
-   * POST /api/migrate
-   * Migrates code to specified target language
-   */
   async migrateCode(req, res) {
     try {
       const { code, target } = req.body;
@@ -31,7 +27,6 @@ class MigrationController {
         });
       }
 
-      // Perform migration
       const result = await migrationService.migrateCode(code, target);
 
       return res.status(200).json({
@@ -47,10 +42,7 @@ class MigrationController {
     }
   }
 
-  /**
-   * GET /api/migrate/history
-   * Retrieves all migration sessions
-   */
+
   async getMigrationHistory(req, res) {
     try {
       const history = await migrationService.getMigrationHistory();

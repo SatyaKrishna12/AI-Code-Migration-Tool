@@ -23,11 +23,7 @@ class AIService {
     }
   }
 
-  /**
-   * Generates migrated code using Gemini API
-   * @param {string} prompt - The prompt to send to Gemini
-   * @returns {Promise<string>} - The AI-generated code
-   */
+
   async generateCode(prompt) {
     this.initialize();
     
@@ -61,7 +57,6 @@ class AIService {
 
       const text = result.response.text().trim();
       
-      // Clean up the response - remove markdown code blocks if present
       let cleanedCode = text;
       cleanedCode = cleanedCode.replace(/^```[\w]*\n/gm, '');
       cleanedCode = cleanedCode.replace(/\n```$/gm, '');
