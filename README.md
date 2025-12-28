@@ -71,7 +71,99 @@ Each migration session is stored and can be revisited later. This allows users t
 
 This feature reflects real developer workflows where experimentation and revision are common.
 
+---
 
+
+## Setup Instructions
+
+### Prerequisites
+
+- Node.js (v18 or above recommended)
+
+- npm or yarn
+
+- MongoDB (local or Atlas)
+
+---
+
+## Backend Setup
+
+1. Navigate to the backend directory:
+
+```
+
+cd Backend
+```
+
+Install dependencies:
+```
+npm install
+```
+
+Create a .env file in the server directory with the following content:
+
+```
+PORT=5000
+
+NODE_ENV=production
+
+MONGODB_URI=
+
+GEMINI_API_KEY=
+
+ALLOWED_ORIGINS=
+```
+Notes:
+
+MONGODB_URI: MongoDB connection string
+
+GEMINI_API_KEY: API key for Gemini
+
+ALLOWED_ORIGINS: Comma-separated list of allowed frontend origins (for CORS)
+
+Start the backend server:
+```
+npm run dev
+```
+## Frontend Setup
+
+Navigate to the frontend directory:
+
+```
+cd Frontend
+```
+Install dependencies:
+```
+npm install
+```
+Create a .env file in the client directory with the following content:
+```
+VITE_API_BASE_URL=http://localhost:5000/api/migrate
+```
+Start the frontend development server:
+```
+
+npm run dev
+```
+Open the application in your browser at:
+```
+http://localhost:5173
+```
+### How It Works (High Level)
+
+- The user pastes legacy JavaScript code into the Monaco Editor.
+
+- The code is sent to the backend through a REST API.
+
+- The backend sends the code to the Gemini API with controlled prompts.
+
+- The AI returns modernized ES6+ or TypeScript code.
+
+- The frontend displays a side-by-side diff using Monaco Diff Viewer.
+
+- The user can edit, accept, and export the migrated code.
+
+- Migration sessions are stored for future reference.
 
 
 ---
