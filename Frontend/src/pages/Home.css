@@ -1,13 +1,14 @@
 .home-container {
   min-height: 100vh;
-  background: #f5f5f5;
+  background: linear-gradient(135deg, #E6F0FF 0%, #F5F9FF 100%);
 }
 
 .app-header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0066FF 0%, #0052CC 100%);
   color: white;
-  padding: 40px 20px;
+  padding: 50px 20px;
   text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 102, 255, 0.08);
 }
 
 .app-header h1 {
@@ -43,26 +44,50 @@
   scroll-margin-top: 20px;
 }
 
+.editor-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.editors-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 30px;
+}
+
+.editors-container .editor-wrapper {
+  margin-bottom: 0;
+}
+
+@media (max-width: 1024px) {
+  .editors-container {
+    grid-template-columns: 1fr;
+  }
+}
+
 .migrated-section {
-  background: linear-gradient(to right, #f8f9fa, #ffffff);
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
-  border: 2px solid #667eea;
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 102, 255, 0.06);
+  border: 2px solid #0066ff;
 }
 
 .editor-label {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
-  color: #333;
-  margin-bottom: 10px;
+  color: #1a1a2e;
+  margin-bottom: 15px;
   display: block;
 }
 
 .migrated-label {
   font-size: 16px;
   font-weight: 700;
-  color: #667eea;
+  color: #0066FF;
   margin-bottom: 15px;
   display: flex;
   align-items: center;

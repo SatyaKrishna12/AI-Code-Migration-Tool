@@ -1,4 +1,5 @@
 import Button from '../Common/Button';
+import { FaPlay, FaTrash, FaDownload, FaCode } from 'react-icons/fa';
 import './EditorToolbar.css';
 
 const EditorToolbar = ({
@@ -13,6 +14,7 @@ const EditorToolbar = ({
   return (
     <div className="editor-toolbar">
       <div className="toolbar-left">
+        <FaCode className="target-icon" />
         <label className="target-label">Target Language:</label>
         <select
           className="target-select"
@@ -27,14 +29,14 @@ const EditorToolbar = ({
       
       <div className="toolbar-right">
         <Button onClick={onClear} variant="secondary" disabled={isLoading}>
-          Clear
+          <FaTrash /> Clear
         </Button>
         <Button onClick={onMigrate} variant="primary" disabled={isLoading}>
-          {isLoading ? 'Migrating...' : 'Migrate Code'}
+          <FaPlay /> {isLoading ? 'Migrating...' : 'Migrate Code'}
         </Button>
         {hasMigratedCode && (
           <Button onClick={onExport} variant="success" disabled={isLoading}>
-            Export Code
+            <FaDownload /> Export Code
           </Button>
         )}
       </div>

@@ -1,29 +1,35 @@
 .migration-history {
   margin-top: 30px;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
+  border: 2px solid #D1E0FF;
+  border-radius: 12px;
   overflow: hidden;
   background: white;
+  box-shadow: 0 1px 3px rgba(0, 102, 255, 0.04);
 }
 
 .history-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 20px;
-  background: #f8f9fa;
+  padding: 18px 24px;
+  background: linear-gradient(to right, #F5F9FF, #E6F0FF);
   cursor: pointer;
   user-select: none;
+  border-bottom: 2px solid #D1E0FF;
 }
 
 .history-header:hover {
-  background: #e9ecef;
+  background: linear-gradient(to right, #E6F0FF, #D1E0FF);
 }
 
 .history-header h3 {
   margin: 0;
   font-size: 16px;
-  color: #333;
+  color: #1a1a2e;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .toggle-btn {
@@ -31,7 +37,8 @@
   border: none;
   font-size: 14px;
   cursor: pointer;
-  color: #666;
+  color: #0066FF;
+  font-weight: 600;
 }
 
 .history-content {
@@ -58,10 +65,10 @@
 }
 
 .history-item {
-  padding: 15px 20px;
-  border-bottom: 1px solid #e9ecef;
+  padding: 16px 24px;
+  border-bottom: 1px solid #E6F0FF;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .history-item:last-child {
@@ -69,7 +76,8 @@
 }
 
 .history-item:hover {
-  background: #f8f9fa;
+  background: #F5F9FF;
+  transform: translateX(4px);
 }
 
 .history-item-header {
@@ -80,17 +88,21 @@
 }
 
 .history-target {
-  background: #0066ff;
+  background: #0066FF;
   color: white;
-  padding: 4px 10px;
-  border-radius: 4px;
+  padding: 6px 12px;
+  border-radius: 6px;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 700;
+  box-shadow: 0 1px 2px rgba(0, 102, 255, 0.15);
 }
 
 .history-date {
   font-size: 12px;
   color: #666;
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .history-preview {

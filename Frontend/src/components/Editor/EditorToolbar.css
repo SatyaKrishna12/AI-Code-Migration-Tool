@@ -2,12 +2,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 20px;
-  background: #f8f9fa;
-  border-radius: 8px;
+  padding: 18px 24px;
+  background: white;
+  border-radius: 12px;
   margin-bottom: 20px;
   flex-wrap: wrap;
   gap: 15px;
+  box-shadow: 0 1px 3px rgba(0, 102, 255, 0.04);
+  border: 1px solid #E6F0FF;
 }
 
 .toolbar-left {
@@ -16,20 +18,32 @@
   gap: 10px;
 }
 
+.target-icon {
+  color: #0066FF;
+  font-size: 18px;
+}
+
 .target-label {
   font-size: 14px;
   font-weight: 600;
-  color: #333;
+  color: #1a1a2e;
 }
 
 .target-select {
-  padding: 8px 12px;
-  border: 1px solid #d1d5db;
-  border-radius: 6px;
+  padding: 10px 14px;
+  border: 2px solid #D1E0FF;
+  border-radius: 8px;
   font-size: 14px;
-  background: white;
+  background: #F5F9FF;
   cursor: pointer;
   font-family: inherit;
+  transition: all 0.2s ease;
+}
+
+.target-select:focus {
+  outline: none;
+  border-color: #0066FF;
+  background: white;
 }
 
 .target-select:disabled {

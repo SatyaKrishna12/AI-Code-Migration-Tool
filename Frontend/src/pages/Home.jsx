@@ -39,7 +39,6 @@ const Home = () => {
     }
   };
 
-  // Auto-scroll to migrated code when it's ready
   useEffect(() => {
     if (migratedCode && migratedCodeRef.current) {
       migratedCodeRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -95,29 +94,35 @@ const Home = () => {
           </div>
         )}
 
-        <div className="editor-section">
-          <div className="editor-label">Original Code (JavaScript)</div>
-          <CodeEditor
-            value={originalCode}
-            onChange={setOriginalCode}
-            language="javascript"
-            height="400px"
-          />
-        </div>
-
         {isLoading && <Loader message="Migrating your code..." />}
 
-        {!isLoading && migratedCode && (
-          <div className="editor-section migrated-section" ref={migratedCodeRef}>
-            <div className="editor-label migrated-label">
-              <span> Migrated Code ({target}) - Editable</span>
+        {!isLoading && (
+          <div className={migratedCode ? "editors-container" : ""}>
+            <div className="editor-wrapper">
+              <div className="editor-label">Original Code (JavaScript)</div>
+              <CodeEditor
+                key={`original-${migratedCode ? 'split' : 'full'}`}
+                value={originalCode}
+                onChange={setOriginalCode}
+                language="javascript"
+                height="500px"
+              />
             </div>
-            <CodeEditor
-              value={migratedCode}
-              onChange={setMigratedCode}
-              language={getEditorLanguage()}
-              height="400px"
-            />
+
+            {migratedCode && (
+              <div className="editor-wrapper" ref={migratedCodeRef}>
+                <div className="editor-label migrated-label">
+                  <span> Migrated Code ({target}) - Editable</span>
+                </div>
+                <CodeEditor
+                  key={`migrated-${target}`}
+                  value={migratedCode}
+                  onChange={setMigratedCode}
+                  language={getEditorLanguage()}
+                  height="500px"
+                />
+              </div>
+            )}
           </div>
         )}
 

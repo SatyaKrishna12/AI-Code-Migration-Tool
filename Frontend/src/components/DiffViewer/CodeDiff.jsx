@@ -1,4 +1,4 @@
-import ReactDiffViewer from 'react-diff-viewer';
+import { DiffEditor } from '@monaco-editor/react';
 import './CodeDiff.css';
 
 const CodeDiff = ({ originalCode, migratedCode }) => {
@@ -19,21 +19,22 @@ const CodeDiff = ({ originalCode, migratedCode }) => {
           <span className="label-migrated">Migrated Code</span>
         </div>
       </div>
-      <ReactDiffViewer
-        oldValue={originalCode}
-        newValue={migratedCode}
-        splitView={true}
-        useDarkTheme={false}
-        showDiffOnly={false}
-        styles={{
-          variables: {
-            light: {
-              diffViewerBackground: '#fff',
-              addedBackground: '#e6ffed',
-              addedColor: '#24292e',
-              removedBackground: '#ffeef0',
-              removedColor: '#24292e',
-            },
+      <DiffEditor
+        original={originalCode}
+        modified={migratedCode}
+        language="javascript"
+        height="600px"
+        theme="light"
+        options={{
+          readOnly: true,
+          renderSideBySide: true,
+          enableSplitViewResizing: true,
+          fontSize: 14,
+          minimap: { enabled: false },
+          scrollBeyondLastLine: false,
+          wordWrap: 'on',
+          scrollbar: {
+            alwaysConsumeMouseWheel: false,
           },
         }}
       />

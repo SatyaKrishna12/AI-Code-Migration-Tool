@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { FaHistory, FaChevronDown, FaChevronRight, FaClock } from 'react-icons/fa';
 import migrationApi from '../../services/migrationApi';
 import { formatDate } from '../../utils/fileExport';
 import './MigrationHistory.css';
@@ -38,8 +39,10 @@ const MigrationHistory = ({ onSelectHistory }) => {
   return (
     <div className="migration-history">
       <div className="history-header" onClick={() => setIsExpanded(!isExpanded)}>
-        <h3>Migration History ({history.length})</h3>
-        <button className="toggle-btn">{isExpanded ? '▼' : '▶'}</button>
+        <h3><FaHistory /> Migration History ({history.length})</h3>
+        <button className="toggle-btn">
+          {isExpanded ? <FaChevronDown /> : <FaChevronRight />}
+        </button>
       </div>
 
       {isExpanded && (
@@ -62,7 +65,9 @@ const MigrationHistory = ({ onSelectHistory }) => {
                 >
                   <div className="history-item-header">
                     <span className="history-target">{item.target}</span>
-                    <span className="history-date">{formatDate(item.createdAt)}</span>
+                    <span className="history-date">
+                      <FaClock /> {formatDate(item.createdAt)}
+                    </span>
                   </div>
                   <div className="history-preview">
                     {item.originalCode.substring(0, 80)}...

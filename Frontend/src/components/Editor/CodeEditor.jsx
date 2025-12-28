@@ -3,7 +3,7 @@ import './CodeEditor.css';
 
 const CodeEditor = ({ value, onChange, language = 'javascript', height = '400px', readOnly = false }) => {
   const handleEditorDidMount = (editor) => {
-    // Allow page scroll when hovering over editor
+    // Allow scrolling the page when cursor is over editor
     const editorDom = editor.getDomNode();
     if (editorDom) {
       editorDom.style.pointerEvents = 'auto';
